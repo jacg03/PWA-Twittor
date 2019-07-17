@@ -1,7 +1,13 @@
-//Register SW 
+// Register SW 
+var url = window.location.href;
+var swLocation = '/PWA-Twittor/sw.js';
 if(navigator.serviceWorker) {
-    navigator.serviceWorker.register('./sw.js');
+    if(url.includes('localhost')){
+        swLocation = '/sw.js';
+    }
+    navigator.serviceWorker.register(swLocation);
 }
+// END Register SW
 
 // Referencias de jQuery
 
